@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/x-icon" href="/img/favicon.ico">
+    <title>匿你留言版</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery.js v1.11.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <li id="menu">
+      <ul>
+          <a class="title">
+              <div id="avatar">
+                  <img src="img/avatar.webp">
+              </div>
+              <div>
+                  延中留言版
+              </div>
+          </a>
+      </ul>
+  </li>
+    <form id="google-form" class="contact100-form validate-form">
+      <h2 class="contact100-form-title" style="color: white;">
+        留言板
+      </h2>
+      <p>
+        這裡告白版或靠北都可以
+        <br>請不要打班級請打,請打成七八九年級
+        <br>也不要打名字只能打姓氏
+      </p>
+      <a class="community" href="https://www.instagram.com/">
+        <img src="img/ig.png">
+      </a>
+      <a class="community" href="https://twitter.com/yan_he42517">
+        <img src="img/twitter.png">
+      </a>
+      <div class="wrap-input100 validate-input" data-validate="發送的版為必填">
+        <input style="width:90px; height:25px; line-height:50px; border-radius: 10px;" id="name" class="input100" type="text" placeholder="靠北版 告白版">
+        <span class="focus-input100"></span>
+      </div>
+        <div class="wrap-input100" data-validate="Message is required">
+            <textarea id="message" class="input100" style="width:350px; height:150px; line-height:50px; padding:0.1px; border-radius: 10px;" placeholder="留言你想說的話"></textarea>
+            <span class="focus-input100"></span>
+          </div>
+        <div class="wrap-input100">
+          <input style="width:250px; height:25px; line-height:50px; border-radius: 10px;" id="email" class="input100" type="text" placeholder="電子郵件">
+          <span class="focus-input100"></span>
+        </div>
+        <div class="container-contact100-form-btn">
+            <button style="width: 50px;  height:30px; border-radius: 99em;" class="contact100-form-btn">
+              送出
+            </button>
+          </div>
+    </form>
+    <script>
+        $('#google-form').submit(function (e) {
+    //在這裡我們要先擋掉form默認事件
+    e.preventDefault();
+
+    if ($('#name').val() && $('#email').val()) {//需要先確認必填欄位是否填寫
+      $.ajax({
+        // url為Google Form按下submit的aciotn
+        url: "https://docs.google.com/forms/d/1exWes077I7MQegS2TFGcdTW5P_xKVFRaUMqRtpoX84o/formResponse",
+        crossDomain: true,//解決跨網域CORS的問題
+        data: {// entry.xxxxx 這些需要填寫您表單裡面的值，與其相互對應
+          "entry.1296058552": $('#name').val(),
+          "entry.747502929": $('#message').val(),
+          "entry.135780277": $('#email').val()
+        },
+        type: "POST", //因為是要進行insert的動作，故事用POST
+        dataType: "JSONP",
+        complete: function () {
+          //完成後把這些欄位清空
+          $('#name').val('')
+          $('#email').val('')
+          $('#message').val('')
+        }
+      });
+    }
+  });
+    </script>
+</body>
+</html>

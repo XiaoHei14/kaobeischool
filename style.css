@@ -1,0 +1,86 @@
+@font-face {
+    font-family: piexl;
+    src: url("woff/fusion-pixel-10px-monospaced-zh_hant.woff2");
+}
+
+#avatar {
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    border-radius: 50%
+}
+
+#avatar img {
+    width: 100%;
+    height: 100%
+}
+
+.title{
+    display: flex;
+    align-items: center
+}
+
+.title div
+{
+    margin: 0 10px;
+    font-size: 2rem;
+    font-family: piexl;
+}
+
+body{
+    background-image: url('img/119093067_3458846967508261_7771388913135770763_n.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#google-form{
+    width: 88%;
+    min-height: 380px;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #181a1be6;
+    border-radius: 20px;
+    transition: all .5s;
+    box-shadow: #0003 0 8px 10px
+}
+
+#google-form h2 {
+    font-family: piexl;
+    text-align: center;
+    color: #fff
+}
+
+#google-form p
+{
+    text-align: center;
+    padding: 20px 40px;
+    color: aqua;
+    font-family: piexl;
+}
+
+#google-form:hover {
+    top: 53%;
+    box-shadow: #0000004d 0 15px 25px
+}
+
+.community
+{
+    float: right;
+    width: 50px;
+    height:50px;
+    border-radius: 99em;
+}
+
+.community img
+{
+    width: 50px;
+    height:50px;
+    border-radius: 99em;
+}
+
+.community:hover {
+        box-shadow: #0000004d 0 15px 25px
+}

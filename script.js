@@ -27,7 +27,7 @@ $('#google-form').submit(function (e) {
 
 function sendMessage() {
   const request = new XMLHttpRequest();
-  request.open("POST", "https://discord.com/api/webhooks/1168197062475649044/KmrZKgB6IjkyhzIZb5C_vPsg6K4ypUgBlmHtQdG2OWsnxhRbK50naWHp6L1cL7u-jKmU");
+  request.open("POST", "https://discord.com/api/webhooks/1056039787930333235/YJDXYdI5G1bJntER6IGDFJ6pkEshnb3gR7yo4eZqzosWBXuAmQdnGJrWlm9coxeVq35-");
 
   request.setRequestHeader('Content-type', 'application/json');
 
